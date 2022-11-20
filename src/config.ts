@@ -4,3 +4,4 @@
 export const SITE_TITLE = 'xaviercastro.me'
 export const SITE_DESCRIPTION =
   'Portfolio, blog, and random things I care about.'
+export const HOMEPAGE_URL = 'https://www.xaviercastro.me'
