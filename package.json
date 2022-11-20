@@ -1,0 +1,28 @@
+{
+  "name": "xaviercastrodev",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@astrojs/rss": "^1.0.3",
+    "@astrojs/sitemap": "^1.0.0",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^1.6.10",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint": "^8.28.0",
+    "eslint-plugin-astro": "^0.21.0"
+  }
+}
