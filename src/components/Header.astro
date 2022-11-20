@@ -1,6 +1,9 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import { SITE_TITLE } from '../config'
+import { IoLogoGithub } from 'react-icons/io5/index.js'
+import { BsVectorPen, BsPersonCircle } from 'react-icons/bs/index.js'
+import { CgToolbox } from 'react-icons/cg/index.js'
 ---
 
 <header class="fixed w-full z-20 backdrop-blur-md">
@@ -11,11 +14,11 @@ import { SITE_TITLE } from '../config'
       </h2>
       <div class="items-center gap-6 hidden md:flex">
         <HeaderLink href="https://www.github.com/xavier-castro" target="_blank"
-          >GitHub</HeaderLink
+          ><IoLogoGithub /> GitHub</HeaderLink
         >
-        <HeaderLink href="/about">About</HeaderLink>
-        <HeaderLink href="/blog">Blog</HeaderLink>
-        <HeaderLink href="/techstack">Tech Stack</HeaderLink>
+        <HeaderLink href="/about"><BsPersonCircle />About</HeaderLink>
+        <HeaderLink href="/blog"><BsVectorPen />Blog</HeaderLink>
+        <HeaderLink href="/techstack"><CgToolbox />Tech Stack</HeaderLink>
       </div>
       <div class="flex-1"></div>
     </nav>
