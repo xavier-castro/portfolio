@@ -27,8 +27,10 @@ export default function ThemeToggle() {
     const root = document.documentElement
     if (theme === 'dark') {
       root.classList.remove('light')
-    } else {
       root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+      root.classList.add('light')
     }
   }, [theme])
 
@@ -36,5 +38,11 @@ export default function ThemeToggle() {
     setIsMounted(true)
   }, [])
 
-  return isMounted ? <div className="inline-flex">Button</div> : <div />
+  return isMounted ? (
+    <div className="inline-flex" onClick={toggleTheme}>
+      Button
+    </div>
+  ) : (
+    <div />
+  )
 }
