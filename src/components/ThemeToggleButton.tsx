@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md/index'
+import { useEffect, useState } from 'react'
+import { IoMdSunny, IoMdMoon } from 'react-icons/io/index'
 
 const themes = ['light', 'dark']
 
@@ -40,12 +40,24 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div className="inline-flex" onClick={toggleTheme}>
-      <MdDarkMode />
+    <div
+      className="inline-flex p-[2px] items-center cursor-pointer rounded-3xl dark:bg-zinc-600 bg-orange-300"
+      onClick={toggleTheme}
+    >
+      {themes.map(t => {
+        const checked = t === theme
+        return (
+          <button
+            key={t}
+            className={`${checked ? 'text-white' : 'text-black'}`}
+            aria-label={`Switch to ${t} mode`}
+          >
+            {t === 'light' ? <IoMdSunny /> : <IoMdMoon />}
+          </button>
+        )
+      })}
     </div>
   ) : (
-    <div className="inline-flex" onClick={toggleTheme}>
-      <MdOutlineDarkMode />
-    </div>
+    <div />
   )
 }
