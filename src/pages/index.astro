@@ -7,6 +7,12 @@ import Content from '../components/Content.astro'
 // import Navbar from '../components/Navbar'
 import Header from '../components/Header.astro'
 import MastHead from '../components/MastHead.astro'
+
+const posts = (await Astro.glob('./blog/*.md')).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+)
 ---
 
 <!DOCTYPE html>
@@ -50,6 +56,18 @@ import MastHead from '../components/MastHead.astro'
             leo. Donec nec efficitur massa, ac fringilla massa. Donec justo
             quam, commodo id dolor ac, condimentum gravida quam.
           </p>
+        </section>
+
+        <section>
+          <ul>
+            {
+              posts.map(post => (
+                <li>
+                  <a>{post.frontmatter.title}</a>
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </Content>
     </main>
