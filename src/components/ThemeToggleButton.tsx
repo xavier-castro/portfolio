@@ -26,7 +26,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const root = document.documentElement
-    if (theme === 'light') {
+    if (theme === 'dark') {
       root.classList.remove('light')
       root.classList.add('dark')
     } else {
@@ -41,7 +41,7 @@ export default function ThemeToggle() {
 
   return isMounted ? (
     <div
-      className="inline-flex p-[2px] items-center cursor-pointer rounded-3xl dark:bg-zinc-200 bg-orange-200"
+      className="inline-flex p-[2px] items-center cursor-pointer rounded-3xl dark:bg-zinc-600 bg-orange-200"
       onClick={toggleTheme}
     >
       {themes.map(t => {
@@ -52,8 +52,10 @@ export default function ThemeToggle() {
             className={`${
               checked
                 ? `${
-                    t === 'light' ? 'bg-orange-400' : 'bg-slate-600'
-                  } text-black`
+                    t === 'light'
+                      ? 'bg-orange-400 text-orange-50'
+                      : 'bg-slate-600 text-purple-400'
+                  }`
                 : ''
             } p-2 rounded-3xl`}
             aria-label={`Switch to ${t} mode`}
