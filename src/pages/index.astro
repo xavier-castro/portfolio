@@ -1,10 +1,10 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
+import Navbar from '../components/Navbar'
 ---
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ import Content from '../components/Content.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <Body>
-    <Header title={SITE_TITLE} />
+    <Navbar />
     <main class="pt-[60px]">
       <h1 class="font-mplus text-center text-3xl">Welcome!</h1>
       <Content>
