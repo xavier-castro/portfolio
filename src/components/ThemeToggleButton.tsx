@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md/index'
 
 const themes = ['light', 'dark']
 
@@ -40,9 +41,11 @@ export default function ThemeToggle() {
 
   return isMounted ? (
     <div className="inline-flex" onClick={toggleTheme}>
-      Button
+      <MdDarkMode />
     </div>
   ) : (
-    <div />
+    <div className="inline-flex" onClick={toggleTheme}>
+      <MdOutlineDarkMode />
+    </div>
   )
 }
