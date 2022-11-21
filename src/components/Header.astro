@@ -4,6 +4,7 @@ import { SITE_TITLE } from '../config'
 import { IoLogoGithub } from 'react-icons/io5/index.js'
 import { BsVectorPen, BsPersonCircle } from 'react-icons/bs/index.js'
 import { CgToolbox } from 'react-icons/cg/index.js'
+import ThemeToggle from './ThemeToggleButton'
 ---
 
 <header class="fixed w-full z-20 backdrop-blur-md">
@@ -21,6 +22,7 @@ import { CgToolbox } from 'react-icons/cg/index.js'
         <HeaderLink href="/techstack"><CgToolbox />Tech Stack</HeaderLink>
       </div>
       <div class="flex-1"></div>
+      <ThemeToggle client:load />
     </nav>
   </div>
 </header>
