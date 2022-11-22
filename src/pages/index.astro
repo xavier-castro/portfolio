@@ -4,9 +4,9 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
-// import Navbar from '../components/Navbar'
 import Header from '../components/Header.astro'
 import MastHead from '../components/MastHead.astro'
+import { Image } from '@astrojs/image/components'
 
 const posts = (await Astro.glob('./blog/*.md')).sort(
   (a: any, b: any) =>
@@ -59,12 +59,27 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
         </section>
 
         <section>
-          <ul>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {
               posts.map(post => (
-                <li>
-                  <a>{post.frontmatter.title}</a>
-                </li>
+                <>
+                  <Image
+                    class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                    src={post.frontmatter.image}
+                    width={720 * 2}
+                    height={480 * 2}
+                    aspectRatio={2.0}
+                    alt="Thumbnail"
+                  />
+                  <li class="text-center mb-4">
+                    <a href={post.url}>
+                      <div class="mt-3 text-3xl">{post.frontmatter.title}</div>
+                      <div class="opacity-70">
+                        {post.frontmatter.description}
+                      </div>
+                    </a>
+                  </li>
+                </>
               ))
             }
           </ul>
