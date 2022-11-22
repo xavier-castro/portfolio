@@ -65,7 +65,7 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
                 <>
                   <Image
                     class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-                    src={post.frontmatter.image}
+                    src=post.frontmatter.image
                     width={720 * 2}
                     height={480 * 2}
                     aspectRatio={2.0}
