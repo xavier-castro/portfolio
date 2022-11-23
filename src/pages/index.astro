@@ -7,6 +7,7 @@ import Content from '../components/Content.astro'
 import Header from '../components/Header.astro'
 import MastHead from '../components/MastHead.astro'
 import { Image } from '@astrojs/image/components'
+// import Navbar from '../components/Navbar'
 
 const posts = (await Astro.glob('./blog/*.md')).sort(
   (a: any, b: any) =>
@@ -21,7 +22,6 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <Body>
-    <!-- <Navbar /> -->
     <Header />
     <main class="pt-[60px]">
       <MastHead />
@@ -65,7 +65,7 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
                 <>
                   <Image
                     class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-                    src=post.frontmatter.image
+                    src={post.frontmatter.heroImage}
                     width={720 * 2}
                     height={480 * 2}
                     aspectRatio={2.0}
