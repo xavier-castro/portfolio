@@ -1,7 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import { SITE_TITLE } from '../../config'
-import { IoLogoGithub } from 'react-icons/io5/index.js'
+import { IoLogoGithub, IoColorPalette } from 'react-icons/io5/index.js'
 import { BsVectorPen, BsPersonCircle } from 'react-icons/bs/index.js'
 import { CgToolbox } from 'react-icons/cg/index.js'
 import ThemeToggle from '../ThemeToggleButton'
@@ -20,7 +20,7 @@ import ThemeToggle from '../ThemeToggleButton'
         <HeaderLink href="/about"><BsPersonCircle />About</HeaderLink>
         <HeaderLink href="/blog"><BsVectorPen />Blog</HeaderLink>
         <HeaderLink href="/techstack"><CgToolbox />Tech Stack</HeaderLink>
-        <HeaderLink href="/playground">Playground</HeaderLink>
+        <HeaderLink href="/playground"><IoColorPalette />Playground</HeaderLink>
       </div>
       <div class="flex-1"></div>
       <ThemeToggle client:load />
