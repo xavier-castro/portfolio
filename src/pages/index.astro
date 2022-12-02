@@ -7,7 +7,6 @@ import Content from '../components/Content.astro'
 import Header from '../components/Header.astro'
 import { Image } from '@astrojs/image/components'
 import MastHead from '../components/MastHead.astro'
-// import Navbar from '../components/Navbar'
 
 const posts = (await Astro.glob('./blog/*.md')).sort(
   (a: any, b: any) =>
