@@ -1,12 +1,12 @@
 ---
-import BaseHead from '../components/Head/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Core/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Core/Body.astro'
 import Content from '../components/Core/Content.astro'
 import { IoArrowForward, IoChevronForward } from 'react-icons/io5/index.js'
 import Hero from '../components/Hero.astro'
+import BaseHead from '../components/Core/BaseHead.astro'
+import Footer from '../components/Core/Footer.astro'
+import Nav from '../components/Nav/Nav.astro'
 ---
 
 <!DOCTYPE html>
@@ -15,9 +15,9 @@ import Hero from '../components/Hero.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <Body>
-    <Header title={SITE_TITLE} />
+    <Nav />
     <main class="pt-[56px]">
-      <Hero Masthead />
+      <Hero title={SITE_TITLE} />
       <Content>
         <section>
           <h1 class="text-3xl text-center font-mplus mt-12 mb-8">
