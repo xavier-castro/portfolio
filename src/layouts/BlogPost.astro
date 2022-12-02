@@ -29,10 +29,23 @@ const {
   <Body>
     <Header />
     <main class="pt-[56px]">
-      <Content class="mb-8">
+      <Content className="pt-6">
         <article>
-          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-          <h1 class="title">{title}</h1>
+          /* Hero Image */
+          {
+            heroImage && (
+              <img
+                class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                width={720}
+                height={360}
+                src={heroImage}
+                alt=""
+              />
+            )
+          }
+          /* Header */
+          <h1 class="text-3xl my-1 font-mplus">{title}</h1>
+          /* Publish Date */
           {pubDate && <time>{pubDate}</time>}
           {
             updatedDate && (
