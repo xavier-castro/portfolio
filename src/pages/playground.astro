@@ -1,7 +1,10 @@
 ---
+import Card from '../components/Card'
 import BaseHead from '../components/Core/BaseHead.astro'
 import Body from '../components/Core/Body.astro'
 import Content from '../components/Core/Content.astro'
+import Footer from '../components/Core/Footer.astro'
+import Nav from '../components/Nav/Nav.astro'
 ---
 
 <!DOCTYPE html>
@@ -10,8 +13,13 @@ import Content from '../components/Core/Content.astro'
     <BaseHead />
   </head>
 
-  <Content>
-    <h1>Woohoo</h1>
-    <Body />
-  </Content>
+  <Body>
+    <Nav />
+    <main class="pt-[60px]">
+      <Content>
+        <Card title={'Hello'} />
+      </Content>
+    </main>
+    <Footer />
+  </Body>
 </html>
