@@ -29,7 +29,7 @@ const {
   <Body>
     <Header />
     <main class="pt-[56px]">
-      <Content className="pt-6">
+      <Content className="py-6">
         <article>
           <!-- HeroImage -->
           {
@@ -48,10 +48,16 @@ const {
           <div>{description}</div>
           <!-- Line separator -->
           <hr class="border-top border-zinc-400 my-4" />
+
+          <!-- Where the text content is at -->
           <slot />
+          <hr class="border-top border-zinc-400 my-4" />
+
+          <!-- Orange highlight hover -->
           <span
             class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
           >
+            <a href="#top">Back to top</a>
           </span>
         </article>
       </Content>
