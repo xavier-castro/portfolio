@@ -27,63 +27,67 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
       <MastHead />
       <Content>
         <section>
+          <h1 class="text-4xl font-bold tracking-tight sm:text-6x">
+            Warm Welcome
+          </h1>
+          <br />
           <p class="mb-8 indent-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at molestie
-            velit. Suspendisse ac ullamcorper nibh. Integer a quam ipsum. Quisque
-            porta orci at mauris commodo, vel euismod leo hendrerit. Quisque cursus
-            commodo auctor. Cras id placerat nulla, in venenatis leo. Vestibulum
-            a orci tristique leo pulvinar hendrerit ut id ante. Phasellus et porttitor
-            dolor. Fusce sit amet cursus nisl. Vestibulum eu placerat augue. Mauris
-            in mauris in ante tincidunt eleifend at vitae mi. Donec viverra quis
-            massa quis vulputate. Nulla vitae nibh vel orci convallis facilisis quis
-            nec arcu. Integer faucibus gravida dolor, id dignissim nulla vulputate
-            nec. In a lorem at diam mollis ultricies eget eu magna. Nam ut nisl sed
-            arcu fringilla varius. Maecenas non neque sed neque rutrum cursus ac
-            id tellus. Aenean nec dictum nisi. Cras vitae nisi blandit odio congue
-            auctor. Pellentesque nec euismod ipsum. Maecenas in lorem lorem. Donec
-            massa ligula, tincidunt varius ex nec, finibus egestas massa. Mauris
-            risus velit, dictum id velit eget, convallis finibus orci. Suspendisse
-            tincidunt ornare erat, sit amet fermentum turpis condimentum in. Aliquam
-            accumsan egestas dui quis dictum. Nulla id leo lectus. Etiam eget enim
-            sit amet mi vehicula volutpat nec non lectus. Nam at dapibus mauris.
-            Quisque est leo, varius non est sit amet, ornare aliquam dolor. Ut elementum,
-            lacus ac vestibulum finibus, orci ex pretium massa, id aliquet massa
-            erat ac felis. Sed accumsan ex vitae sagittis venenatis. Proin eu efficitur
-            justo. Integer lobortis purus sit amet quam egestas, eget aliquam sapien
-            sodales. Vivamus id nibh convallis, blandit augue vitae, gravida leo.
-            Donec nec efficitur massa, ac fringilla massa. Donec justo quam, commodo
-            id dolor ac, condimentum gravida quam.
-          </p>
-        </section>
+            Thanks for stopping by. I am a fullstack developer that can create
+            web applications as well as phone applications for iOS and Android.
+            I am currently going to the University of Texas at San Antonio to
+            study cybersecurity. Hopefully through this website I will be able
+            to post usecases and my projects fleshed out in clean and easy to
+            read blog posts.
 
-        <section class="mt-8">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {
-              posts.map(post => (
-                <>
-                  <a href={post.url}>
-                    <Image
-                      class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-                      src={post.frontmatter.heroImage}
-                      width={720 * 2}
-                      height={480 * 2}
-                      aspectRatio={2.0}
-                      alt="Thumbnail"
-                    />
-                    <li class="text-center mb-4">
-                      <div class="mt-3 text-3xl">{post.frontmatter.title}</div>
-                      <div class="opacity-70">
-                        {post.frontmatter.description}
-                      </div>
-                    </li>
-                  </a>
-                </>
-              ))
-            }
-          </ul>
+            <br />
+            <br />
+            This website will have my Github page, which you can find all my projects.
+            I will also be trying out blogging for awhile. I'm not trying to build
+            an audience or following or anything, I just want to type out my thoughts
+            and post it as an online journal.
+            <br />
+            <br />
+            Hopefully you find something useful here.
+          </p>
+          <></>
+
+          <section class="mt-8">
+            <h1 class="text-4xl font-bold tracking-tight sm:text-6x">
+              Blog Post Overview
+            </h1>
+            <br />
+            <br />
+
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {
+                posts.map(post => (
+                  <>
+                    <a href={post.url}>
+                      <Image
+                        class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                        src={post.frontmatter.heroImage}
+                        width={720 * 2}
+                        height={480 * 2}
+                        aspectRatio={2.0}
+                        alt="Thumbnail"
+                      />
+                      <li class="text-center mb-4">
+                        <div class="mt-3 text-3xl">
+                          {post.frontmatter.title}
+                        </div>
+                        <div class="opacity-70">
+                          {post.frontmatter.description}
+                        </div>
+                      </li>
+                    </a>
+                  </>
+                ))
+              }
+            </ul>
+          </section>
         </section>
       </Content>
+      <Footer />
     </main>
-    <Footer />
   </Body>
 </html>
