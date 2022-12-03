@@ -3,6 +3,7 @@ import HeaderLink from './HeaderLink.astro'
 import { SITE_TITLE } from '../../config'
 import { IoLogoGithub, IoColorPalette } from 'react-icons/io5/index.js'
 import { BsVectorPen, BsPersonCircle } from 'react-icons/bs/index.js'
+import { AiFillLinkedin } from 'react-icons/ai/index.js'
 import { CgToolbox } from 'react-icons/cg/index.js'
 import ThemeToggle from '../ThemeToggleButton'
 ---
@@ -14,13 +15,17 @@ import ThemeToggle from '../ThemeToggleButton'
         <a href="/">{SITE_TITLE}</a>
       </h2>
       <div class="items-center gap-6 hidden md:flex">
-        <HeaderLink href="https://www.github.com/xavier-castro" target="_blank"
-          ><IoLogoGithub /> GitHub</HeaderLink
-        >
         <HeaderLink href="/about"><BsPersonCircle />About</HeaderLink>
         <HeaderLink href="/blog"><BsVectorPen />Blog</HeaderLink>
         <HeaderLink href="/techstack"><CgToolbox />Tech Stack</HeaderLink>
         <HeaderLink href="/playground"><IoColorPalette />Playground</HeaderLink>
+        <HeaderLink href="https://www.github.com/xavier-castro" target="_blank"
+          ><IoLogoGithub /> GitHub</HeaderLink
+        >
+        <HeaderLink
+          href="https://www.linkedin.com/in/xavier-castro-9b2a01153/"
+          target="_blank"><AiFillLinkedin />LinkedIn</HeaderLink
+        >
       </div>
       <div class="flex-1"></div>
       <ThemeToggle client:load />

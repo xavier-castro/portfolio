@@ -1,4 +1,9 @@
-export const ListItem = (props: {}) => {
+type ListItemProps = {
+  name: string
+  email: string
+}
+
+export const ListItem: React.FC<ListItemProps> = ({ name, email }) => {
   return (
     <div>
       <ul role="list" className="p-6 divide-y divide-slate-200">
@@ -9,12 +14,8 @@ export const ListItem = (props: {}) => {
             alt=""
           />
           <div className="ml-3 overflow-hidden">
-            <p className="text-sm font-medium text-slate-900">
-              {'Xavier Castro'}
-            </p>
-            <p className="text-sm text-slate-500 truncate">
-              {'xavier_castro@icloud.com'}
-            </p>
+            <p className="text-sm font-medium text-slate-900">{name}</p>
+            <p className="text-sm text-slate-500 truncate">{email}</p>
           </div>
         </li>
       </ul>
